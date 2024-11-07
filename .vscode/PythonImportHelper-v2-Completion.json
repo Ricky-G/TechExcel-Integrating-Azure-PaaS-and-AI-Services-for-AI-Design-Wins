@@ -1,0 +1,445 @@
+[
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "openai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "openai",
+        "description": "openai",
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "wavfile",
+        "importPath": "scipy.io",
+        "description": "scipy.io",
+        "isExtraImport": true,
+        "detail": "scipy.io",
+        "documentation": {}
+    },
+    {
+        "label": "azure.cognitiveservices.speech",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "azure.cognitiveservices.speech",
+        "description": "azure.cognitiveservices.speech",
+        "detail": "azure.cognitiveservices.speech",
+        "documentation": {}
+    },
+    {
+        "label": "TextAnalyticsClient",
+        "importPath": "azure.ai.textanalytics",
+        "description": "azure.ai.textanalytics",
+        "isExtraImport": true,
+        "detail": "azure.ai.textanalytics",
+        "documentation": {}
+    },
+    {
+        "label": "ExtractiveSummaryAction",
+        "importPath": "azure.ai.textanalytics",
+        "description": "azure.ai.textanalytics",
+        "isExtraImport": true,
+        "detail": "azure.ai.textanalytics",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractiveSummaryAction",
+        "importPath": "azure.ai.textanalytics",
+        "description": "azure.ai.textanalytics",
+        "isExtraImport": true,
+        "detail": "azure.ai.textanalytics",
+        "documentation": {}
+    },
+    {
+        "label": "AzureKeyCredential",
+        "importPath": "azure.core.credentials",
+        "description": "azure.core.credentials",
+        "isExtraImport": true,
+        "detail": "azure.core.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "CosmosClient",
+        "importPath": "azure.cosmos",
+        "description": "azure.cosmos",
+        "isExtraImport": true,
+        "detail": "azure.cosmos",
+        "documentation": {}
+    },
+    {
+        "label": "CosmosClient",
+        "importPath": "azure.cosmos",
+        "description": "azure.cosmos",
+        "isExtraImport": true,
+        "detail": "azure.cosmos",
+        "documentation": {}
+    },
+    {
+        "label": "create_chat_completion",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.1_Chat_with_Data",
+        "description": "src.ContosoSuitesDashboard.pages.1_Chat_with_Data",
+        "peekOfCode": "def create_chat_completion(messages):\n    \"\"\"Create and return a new chat completion request. Key assumptions:\n    - The Azure OpenAI endpoint, key, and deployment name are stored in Streamlit secrets.\"\"\"\n    # Retrieve secrets from the Streamlit secret store.\n    # This is a secure way to store sensitive information that you don't want to expose in your code.\n    # Learn more about Streamlit secrets here: https://docs.streamlit.io/develop/concepts/connections/secrets-management\n    # The secrets themselves are stored in the .streamlit/secrets.toml file.\n    aoai_endpoint = st.secrets[\"aoai\"][\"endpoint\"]\n    aoai_key = st.secrets[\"aoai\"][\"key\"]\n    aoai_deployment_name = st.secrets[\"aoai\"][\"deployment_name\"]",
+        "detail": "src.ContosoSuitesDashboard.pages.1_Chat_with_Data",
+        "documentation": {}
+    },
+    {
+        "label": "handle_chat_prompt",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.1_Chat_with_Data",
+        "description": "src.ContosoSuitesDashboard.pages.1_Chat_with_Data",
+        "peekOfCode": "def handle_chat_prompt(prompt):\n    \"\"\"Echo the user's prompt to the chat window.\n    Then, send the user's prompt to Azure OpenAI and display the response.\"\"\"\n    # Echo the user's prompt to the chat window\n    st.session_state.messages.append({\"role\": \"user\", \"content\": prompt})\n    with st.chat_message(\"user\"):\n        st.markdown(prompt)\n    # Send the user's prompt to Azure OpenAI and display the response\n    # The call to Azure OpenAI is handled in create_chat_completion()\n    # This function loops through the responses and displays them as they come in.",
+        "detail": "src.ContosoSuitesDashboard.pages.1_Chat_with_Data",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.1_Chat_with_Data",
+        "description": "src.ContosoSuitesDashboard.pages.1_Chat_with_Data",
+        "peekOfCode": "def main():\n    \"\"\"Main function for the Chat with Data Streamlit app.\"\"\"\n    st.write(\n    \"\"\"\n    # Chat with Data\n    This Streamlit dashboard is intended to show off capabilities of Azure OpenAI, including integration with AI Search.\n    \"\"\"\n    )\n    # Initialize chat history\n    if \"messages\" not in st.session_state:",
+        "detail": "src.ContosoSuitesDashboard.pages.1_Chat_with_Data",
+        "documentation": {}
+    },
+    {
+        "label": "get_hotels",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "description": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "peekOfCode": "def get_hotels():\n    \"\"\"Return a list of hotels from the API.\"\"\"\n    api_endpoint = st.secrets[\"api\"][\"endpoint\"]\n    response = requests.get(f\"{api_endpoint}/Hotels\", timeout=10)\n    return response\n@st.cache_data\ndef get_hotel_bookings(hotel_id):\n    \"\"\"Return a list of bookings for the specified hotel.\"\"\"\n    api_endpoint = st.secrets[\"api\"][\"endpoint\"]\n    response = requests.get(f\"{api_endpoint}/Hotels/{hotel_id}/Bookings\", timeout=10)",
+        "detail": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "documentation": {}
+    },
+    {
+        "label": "get_hotel_bookings",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "description": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "peekOfCode": "def get_hotel_bookings(hotel_id):\n    \"\"\"Return a list of bookings for the specified hotel.\"\"\"\n    api_endpoint = st.secrets[\"api\"][\"endpoint\"]\n    response = requests.get(f\"{api_endpoint}/Hotels/{hotel_id}/Bookings\", timeout=10)\n    return response\n@st.cache_data\ndef invoke_chat_endpoint(question):\n    \"\"\"Invoke the chat endpoint with the specified question.\"\"\"\n    api_endpoint = st.secrets[\"api\"][\"endpoint\"]\n    response = requests.post(f\"{api_endpoint}/Chat\", data={\"message\": question}, timeout=10)",
+        "detail": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "documentation": {}
+    },
+    {
+        "label": "invoke_chat_endpoint",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "description": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "peekOfCode": "def invoke_chat_endpoint(question):\n    \"\"\"Invoke the chat endpoint with the specified question.\"\"\"\n    api_endpoint = st.secrets[\"api\"][\"endpoint\"]\n    response = requests.post(f\"{api_endpoint}/Chat\", data={\"message\": question}, timeout=10)\n    return response\ndef main():\n    \"\"\"Main function for the Chat with Data Streamlit app.\"\"\"\n    st.write(\n    \"\"\"\n    # API Integration via Semantic Kernel",
+        "detail": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "description": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "peekOfCode": "def main():\n    \"\"\"Main function for the Chat with Data Streamlit app.\"\"\"\n    st.write(\n    \"\"\"\n    # API Integration via Semantic Kernel\n    This Streamlit dashboard is intended to demonstrate how we can use\n    the Semantic Kernel library to generate SQL statements from natural language\n    queries and display them in a Streamlit app.\n    ## Select a Hotel\n    \"\"\"",
+        "detail": "src.ContosoSuitesDashboard.pages.2_API_Integration",
+        "documentation": {}
+    },
+    {
+        "label": "handle_query_vectorization",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.3_Vector_Search",
+        "description": "src.ContosoSuitesDashboard.pages.3_Vector_Search",
+        "peekOfCode": "def handle_query_vectorization(query):\n    \"\"\"Vectorize the query using the Vectorize endpoint.\"\"\"\n    api_endpoint = st.secrets[\"api\"][\"endpoint\"]\n    response = requests.get(f\"{api_endpoint}/Vectorize\", params={\"text\": query}, timeout=10, verify=False)\n    return response.text\ndef handle_vector_search(query_vector, max_results=5, minimum_similarity_score=0.8):\n    \"\"\"Perform a vector search using the VectorSearch endpoint.\"\"\"\n    api_endpoint = st.secrets[\"api\"][\"endpoint\"]\n    headers = {\"Content-Type\": \"application/json\"}\n    response = requests.post(f\"{api_endpoint}/VectorSearch\", data=query_vector, params={\"max_results\": max_results, \"minimum_similarity_score\": minimum_similarity_score}, headers=headers, timeout=10, verify=False)",
+        "detail": "src.ContosoSuitesDashboard.pages.3_Vector_Search",
+        "documentation": {}
+    },
+    {
+        "label": "handle_vector_search",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.3_Vector_Search",
+        "description": "src.ContosoSuitesDashboard.pages.3_Vector_Search",
+        "peekOfCode": "def handle_vector_search(query_vector, max_results=5, minimum_similarity_score=0.8):\n    \"\"\"Perform a vector search using the VectorSearch endpoint.\"\"\"\n    api_endpoint = st.secrets[\"api\"][\"endpoint\"]\n    headers = {\"Content-Type\": \"application/json\"}\n    response = requests.post(f\"{api_endpoint}/VectorSearch\", data=query_vector, params={\"max_results\": max_results, \"minimum_similarity_score\": minimum_similarity_score}, headers=headers, timeout=10, verify=False)\n    return response\ndef main():\n    \"\"\"Main function for the Vector Search over Maintenance Requests Streamlit page.\"\"\"\n    st.write(\n        \"\"\"",
+        "detail": "src.ContosoSuitesDashboard.pages.3_Vector_Search",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.3_Vector_Search",
+        "description": "src.ContosoSuitesDashboard.pages.3_Vector_Search",
+        "peekOfCode": "def main():\n    \"\"\"Main function for the Vector Search over Maintenance Requests Streamlit page.\"\"\"\n    st.write(\n        \"\"\"\n        # Vector Search for Maintenance Requests.\n        This Streamlit dashboard is intended to demonstrate how we can use\n        the Vector Search to find maintenance requests that are similar to\n        a given query.\n        ## Enter a Maintenance Request query\n        \"\"\"",
+        "detail": "src.ContosoSuitesDashboard.pages.3_Vector_Search",
+        "documentation": {}
+    },
+    {
+        "label": "create_transcription_request",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def create_transcription_request(audio_file, speech_recognition_language=\"en-US\"):\n    \"\"\"Transcribe the contents of an audio file. Key assumptions:\n    - The audio file is in WAV format.\n    - The audio file is mono.\n    - The audio file has a sample rate of 16 kHz.\n    - Speech key and region are stored in Streamlit secrets.\"\"\"\n    speech_key = st.secrets[\"speech\"][\"key\"]\n    speech_region = st.secrets[\"speech\"][\"region\"]\n    # Create an instance of a speech config with specified subscription key and service region.\n    speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=speech_region)",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "make_azure_openai_chat_request",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def make_azure_openai_chat_request(system, call_contents):\n    \"\"\"Create and return a new chat completion request. Key assumptions:\n    - Azure OpenAI endpoint, key, and deployment name stored in Streamlit secrets.\"\"\"\n    aoai_endpoint = st.secrets[\"aoai\"][\"endpoint\"]\n    aoai_key = st.secrets[\"aoai\"][\"key\"]\n    aoai_deployment_name = st.secrets[\"aoai\"][\"deployment_name\"]\n    client = openai.AzureOpenAI(\n        api_key=aoai_key,\n        api_version=\"2024-06-01\",\n        azure_endpoint = aoai_endpoint",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "is_call_in_compliance",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def is_call_in_compliance(call_contents, include_recording_message, is_relevant_to_topic):\n    \"\"\"Analyze a call for relevance and compliance.\"\"\"\n    return \"This is a placeholder result. Fill in with real compliance analysis.\"\n@st.cache_data\ndef generate_extractive_summary(call_contents):\n    \"\"\"Generate an extractive summary of a call transcript. Key assumptions:\n    - Azure AI Services Language service endpoint and key stored in Streamlit secrets.\"\"\"\n    language_endpoint = st.secrets[\"language\"][\"endpoint\"]\n    language_key = st.secrets[\"language\"][\"key\"]\n    # The call_contents parameter is formatted as a list of strings.",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "generate_extractive_summary",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def generate_extractive_summary(call_contents):\n    \"\"\"Generate an extractive summary of a call transcript. Key assumptions:\n    - Azure AI Services Language service endpoint and key stored in Streamlit secrets.\"\"\"\n    language_endpoint = st.secrets[\"language\"][\"endpoint\"]\n    language_key = st.secrets[\"language\"][\"key\"]\n    # The call_contents parameter is formatted as a list of strings.\n    # Join them together with spaces to pass in as a single document.\n    joined_call_contents = ' '.join(call_contents)\n    return \"This is a placeholder result. Fill in with real extractive summary.\"\n@st.cache_data",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "generate_abstractive_summary",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def generate_abstractive_summary(call_contents):\n    \"\"\"Generate an abstractive summary of a call transcript. Key assumptions:\n    - Azure AI Services Language service endpoint and key stored in Streamlit secrets.\"\"\"\n    language_endpoint = st.secrets[\"language\"][\"endpoint\"]\n    language_key = st.secrets[\"language\"][\"key\"]\n    # The call_contents parameter is formatted as a list of strings.\n    # Join them together with spaces to pass in as a single document.\n    joined_call_contents = ' '.join(call_contents)\n    return \"This is a placeholder result. Fill in with real abstractive summary.\"\n@st.cache_data",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "generate_query_based_summary",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def generate_query_based_summary(call_contents):\n    \"\"\"Generate a query-based summary of a call transcript.\"\"\"\n    # The call_contents parameter is formatted as a list of strings.\n    # Join them together with spaces to pass in as a single document.\n    joined_call_contents = ' '.join(call_contents)\n    return \"This is a placeholder result. Fill in with real query-based summary.\"\n@st.cache_data\ndef create_sentiment_analysis_and_opinion_mining_request(call_contents):\n    \"\"\"Analyze the sentiment of a call transcript and mine opinions. Key assumptions:\n    - Azure AI Services Language service endpoint and key stored in Streamlit secrets.\"\"\"",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "create_sentiment_analysis_and_opinion_mining_request",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def create_sentiment_analysis_and_opinion_mining_request(call_contents):\n    \"\"\"Analyze the sentiment of a call transcript and mine opinions. Key assumptions:\n    - Azure AI Services Language service endpoint and key stored in Streamlit secrets.\"\"\"\n    language_endpoint = st.secrets[\"language\"][\"endpoint\"]\n    language_key = st.secrets[\"language\"][\"key\"]\n    # The call_contents parameter is formatted as a list of strings.\n    # Join them together with spaces to pass in as a single document.\n    joined_call_contents = ' '.join(call_contents)\n    return \"This is a placeholder result. Fill in with real sentiment analysis.\"\ndef make_azure_openai_embedding_request(text):",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "make_azure_openai_embedding_request",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def make_azure_openai_embedding_request(text):\n    \"\"\"Create and return a new embedding request. Key assumptions:\n    - Azure OpenAI endpoint, key, and deployment name stored in Streamlit secrets.\"\"\"\n    return \"This is a placeholder result. Fill in with real embedding.\"\ndef normalize_text(s):\n    \"\"\"Normalize text for tokenization.\"\"\"\n    s = re.sub(r'\\s+',  ' ', s).strip()\n    s = re.sub(r\". ,\",\"\",s)\n    # remove all instances of multiple spaces\n    s = s.replace(\"..\",\".\")",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_text",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def normalize_text(s):\n    \"\"\"Normalize text for tokenization.\"\"\"\n    s = re.sub(r'\\s+',  ' ', s).strip()\n    s = re.sub(r\". ,\",\"\",s)\n    # remove all instances of multiple spaces\n    s = s.replace(\"..\",\".\")\n    s = s.replace(\". .\",\".\")\n    s = s.replace(\"\\n\", \"\")\n    s = s.strip()\n    return s",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embeddings_for_call_contents",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def generate_embeddings_for_call_contents(call_contents):\n    \"\"\"Generate embeddings for call contents. Key assumptions:\n    - Call contents is a single string.\n    - Azure OpenAI endpoint, key, and deployment name stored in Streamlit secrets.\"\"\"\n    # Normalize the text for tokenization\n    # Call make_azure_openai_embedding_request() with the normalized content\n    # Return the embeddings\n    return [0, 0, 0]\ndef save_transcript_to_cosmos_db(transcript_item):\n    \"\"\"Save embeddings to Cosmos DB vector store. Key assumptions:",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "save_transcript_to_cosmos_db",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def save_transcript_to_cosmos_db(transcript_item):\n    \"\"\"Save embeddings to Cosmos DB vector store. Key assumptions:\n    - transcript_item is a JSON object containing call_id (int), \n        call_transcript (string), and request_vector (list).\n    - Cosmos DB endpoint, key, and database name stored in Streamlit secrets.\"\"\"\n    cosmos_endpoint = st.secrets[\"cosmos\"][\"endpoint\"]\n    cosmos_key = st.secrets[\"cosmos\"][\"key\"]\n    cosmos_database_name = st.secrets[\"cosmos\"][\"database_name\"]\n    cosmos_container_name = \"CallTranscripts\"\n    # Create a CosmosClient",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "perform_audio_transcription",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def perform_audio_transcription(uploaded_file):\n    \"\"\"Generate a transcription of an uploaded audio file.\"\"\"\n    st.audio(uploaded_file, format='audio/wav')\n    with st.spinner(\"Transcribing the call...\"):\n        all_results = create_transcription_request(uploaded_file)\n        return all_results\ndef perform_compliance_check(call_contents, include_recording_message, is_relevant_to_topic):\n    \"\"\"Perform a compliance check on a call transcript.\"\"\"\n    with st.spinner(\"Checking for compliance...\"):\n        if 'file_transcription_results' in st.session_state:",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "perform_compliance_check",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def perform_compliance_check(call_contents, include_recording_message, is_relevant_to_topic):\n    \"\"\"Perform a compliance check on a call transcript.\"\"\"\n    with st.spinner(\"Checking for compliance...\"):\n        if 'file_transcription_results' in st.session_state:\n            call_contents = st.session_state.file_transcription_results\n            if call_contents is not None and len(call_contents) > 0:\n                st.session_state.compliance_results = is_call_in_compliance(\n                    call_contents, include_recording_message, is_relevant_to_topic)\n            st.success(\"Compliance check complete!\")\n        else:",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "perform_extractive_summary_generation",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def perform_extractive_summary_generation():\n    \"\"\"Generate an extractive summary of a call transcript.\n    That is, a summary that extracts key sentences from the call transcript.\"\"\"\n    # Set call_contents to file_transcription_results.\n    # If it is empty, write out an error message for the user.\n    if 'file_transcription_results' in st.session_state:\n        # Use st.spinner() to wrap the summarization process.\n        with st.spinner(\"Generating extractive summary...\"):\n            if 'extractive_summary' in st.session_state:\n                extractive_summary = st.session_state.extractive_summary",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "perform_abstractive_summary_generation",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def perform_abstractive_summary_generation():\n    \"\"\"Generate an abstractive summary of a call transcript.\n    That is, a summary that generates new sentences to summarize the call transcript.\"\"\"\n    # Set call_contents to file_transcription_results.\n    # If it is empty, write out an error message for the user.\n    if 'file_transcription_results' in st.session_state:\n        # Use st.spinner() to wrap the summarization process.\n        with st.spinner(\"Generating abstractive summary...\"):\n            # Call the generate_abstractive_summary function and set\n            # its results to a variable named abstractive_summary.",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "perform_openai_summary",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def perform_openai_summary():\n    \"\"\"Generate a query-based summary of a call transcript.\"\"\"\n    # Set call_contents to file_transcription_results.\n    # If it is empty, write out an error message for the user.\n    if 'file_transcription_results' in st.session_state:\n        # Use st.spinner() to wrap the summarization process.\n        with st.spinner(\"Generating Azure OpenAI summary...\"):\n            # Call the generate_query_based_summary function and set\n            # its results to a variable named openai_summary.\n            summary = generate_query_based_summary(st.session_state.file_transcription_results)",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "perform_sentiment_analysis_and_opinion_mining",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def perform_sentiment_analysis_and_opinion_mining():\n    \"\"\"Analyze the sentiment of a call transcript and mine opinions.\"\"\"\n    # Set call_contents to file_transcription_results.\n    # If it is empty, write out an error message for the user.\n    if 'file_transcription_results' in st.session_state:\n        # Use st.spinner() to wrap the sentiment analysis process.\n        with st.spinner(\"Analyzing transcript sentiment and mining opinions...\"):\n            # Call the create_sentiment_analysis_and_opinion_mining_request\n            # function and set its results to a variable named sentiment_and_mined_opinions.\n            ftr = st.session_state.file_transcription_results",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "perform_save_embeddings_to_cosmos_db",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def perform_save_embeddings_to_cosmos_db():\n    \"\"\"Save embeddings to Cosmos DB vector store.\"\"\"\n    # Set call_contents to file_transcription_results.\n    # If it is empty, write out an error message for the user.\n    if 'file_transcription_results' in st.session_state:\n        # Use st.spinner() to wrap the embeddings saving process.\n        with st.spinner(\"Saving embeddings to Cosmos DB...\"):\n            ftr = ' '.join(st.session_state.file_transcription_results)\n            # Generate a call ID based on the text.\n            # This is for demonstration purposes--a real system should use a unique ID.",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "description": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "peekOfCode": "def main():\n    \"\"\"Main function for the call center dashboard.\"\"\"\n    call_contents = []\n    st.write(\n    \"\"\"\n    # Call Center\n    This Streamlit dashboard is intended to replicate some of the functionality\n    of a call center monitoring solution. It is not intended to be a\n    production-ready application.\n    \"\"\"",
+        "detail": "src.ContosoSuitesDashboard.pages.4_Call_Center",
+        "documentation": {}
+    },
+    {
+        "label": "make_azure_openai_embedding_request",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.5_Call_Center_Search",
+        "description": "src.ContosoSuitesDashboard.pages.5_Call_Center_Search",
+        "peekOfCode": "def make_azure_openai_embedding_request(text):\n    \"\"\"Create and return a new embedding request. Key assumptions:\n    - Azure OpenAI endpoint, key, and deployment name stored in Streamlit secrets.\"\"\"\n    return \"This is a placeholder result. Fill in with real embedding.\"\ndef make_cosmos_db_vector_search_request(query_embedding, max_results=5, minimum_similarity_score=0.5):\n    \"\"\"Create and return a new vector search request. Key assumptions:\n    - Query embedding is a list of floats based on a search string.\n    - Cosmos DB endpoint, key, and database name stored in Streamlit secrets.\"\"\"\n    cosmos_endpoint = st.secrets[\"cosmos\"][\"endpoint\"]\n    cosmos_key = st.secrets[\"cosmos\"][\"key\"]",
+        "detail": "src.ContosoSuitesDashboard.pages.5_Call_Center_Search",
+        "documentation": {}
+    },
+    {
+        "label": "make_cosmos_db_vector_search_request",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.5_Call_Center_Search",
+        "description": "src.ContosoSuitesDashboard.pages.5_Call_Center_Search",
+        "peekOfCode": "def make_cosmos_db_vector_search_request(query_embedding, max_results=5, minimum_similarity_score=0.5):\n    \"\"\"Create and return a new vector search request. Key assumptions:\n    - Query embedding is a list of floats based on a search string.\n    - Cosmos DB endpoint, key, and database name stored in Streamlit secrets.\"\"\"\n    cosmos_endpoint = st.secrets[\"cosmos\"][\"endpoint\"]\n    cosmos_key = st.secrets[\"cosmos\"][\"key\"]\n    cosmos_database_name = st.secrets[\"cosmos\"][\"database_name\"]\n    cosmos_container_name = \"CallTranscripts\"\n    # Create a CosmosClient\n    # Load the Cosmos database and container",
+        "detail": "src.ContosoSuitesDashboard.pages.5_Call_Center_Search",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.5_Call_Center_Search",
+        "description": "src.ContosoSuitesDashboard.pages.5_Call_Center_Search",
+        "peekOfCode": "def main():\n    \"\"\"Main function for the call center search dashboard.\"\"\"\n    st.write(\n    \"\"\"\n    # Call Center Transcript Search\n    This Streamlit dashboard is intended to support vector search as part\n    of a call center monitoring solution. It is not intended to be a\n    production-ready application.\n    \"\"\"\n    )",
+        "detail": "src.ContosoSuitesDashboard.pages.5_Call_Center_Search",
+        "documentation": {}
+    },
+    {
+        "label": "send_message_to_copilot",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.6_Copilot_Chat",
+        "description": "src.ContosoSuitesDashboard.pages.6_Copilot_Chat",
+        "peekOfCode": "def send_message_to_copilot(message):\n    \"\"\"Send a message to the Copilot chat endpoint.\"\"\"\n    api_endpoint = st.secrets[\"api\"][\"endpoint\"]\n    # Exercise 5 Task 2 TODO #11: Send a POST request to the Copilot chat endpoint with the user message and assign the return value to response.\n    response = \"\"\n    return response.text\ndef main():\n    \"\"\"Main function for the Maintenance Copilot Chat Streamlit page.\"\"\"\n    st.write(\n        \"\"\"",
+        "detail": "src.ContosoSuitesDashboard.pages.6_Copilot_Chat",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.pages.6_Copilot_Chat",
+        "description": "src.ContosoSuitesDashboard.pages.6_Copilot_Chat",
+        "peekOfCode": "def main():\n    \"\"\"Main function for the Maintenance Copilot Chat Streamlit page.\"\"\"\n    st.write(\n        \"\"\"\n        # Maintenance Copilot chat\n        This Streamlit dashboard is intended to demonstrate how you can use\n        a Semantic Kernel agent to generate and save a maintenance request.\n        ## Ask the Copilot to generate a maintenance request\n        \"\"\"\n    )",
+        "detail": "src.ContosoSuitesDashboard.pages.6_Copilot_Chat",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.ContosoSuitesDashboard.Index",
+        "description": "src.ContosoSuitesDashboard.Index",
+        "peekOfCode": "def main():\n    st.write(\n    \"\"\"\n    # Contoso Suites Main Page\n    This Streamlit dashboard is intended to serve as a proof of concept of Azure OpenAI functionality for Contoso Suites employees.  It is not intended to be a production-ready application.\n    Use the navigation bar on the left to navigate to the different pages of the dashboard.\n    Pages include:\n    1. Chat with Data. Used in Exercise 01.\n    2. API Integration. Used in Exercise 02.\n    3. Vector Search. Used in Exercise 03.",
+        "detail": "src.ContosoSuitesDashboard.Index",
+        "documentation": {}
+    }
+]
